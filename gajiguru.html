@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Aplikasi Gaji Guru</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="box">
+<h1>Aplikasi Gaji Guru</h1>
+<label>Nama Guru</label>
+<input type="text" name=""><br>
+<label>Waktu Kerja PerJam</label>
+<input type="text" id="wk" name=""><br>
+<label>Lembur</label>
+<input type="text" id="lembur" name=""><br>
+<label>Insentif</label>
+<textarea id="insentif"></textarea><br>
+<label>Total Gaji Dalam Sebulan</label>
+<textarea id="total"></textarea><br>
+<button onclick="coba()">Jumlah</button>
+<script type="text/javascript">
+	function coba() {
+		var wk=parseInt(document.getElementById('wk').value);
+	var lembur=parseInt(document.getElementById('lembur').value);
+	var hasil=wk*90000;
+	var tambah=lembur*20000;
+	var total;
+	if (lembur>=3){
+		total=hasil+tambah+20000;
+		document.getElementById('insentif'). innerHTML='20000';
+		}else{
+			if(lembur<3) {
+				total=hasil+tambah;
+				document.getElementById('insentif'). innerHTML='tidak dapat';
+			}
+		}
+		document.getElementById('total'). innerHTML=total;
+	}
+</script>
+</div>
+</body>
+</html>
